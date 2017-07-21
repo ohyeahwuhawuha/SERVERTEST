@@ -1,0 +1,18 @@
+message MsgRoleDate
+{
+    required uint32 uId = 1;
+    required uint32 uRoleId = 2;
+    required uint32 uRolelv = 3;
+    required uint32 uAwakeLv = 4;
+    required uint32 uBreakoutLv = 5;
+}
+
+message MsgPropertyDate
+{
+    required int32 iAttackSpeed = 1;
+    required int32 iDefense = 2;
+    required int32 iDodge = 3;
+    required int32 iKing = 4;
+    required uint32 uCombat = 5;
+    repeated MsgRoleDate kRoleList = 6;
+}

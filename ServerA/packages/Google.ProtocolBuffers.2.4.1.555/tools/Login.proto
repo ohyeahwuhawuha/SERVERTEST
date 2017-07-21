@@ -1,0 +1,11 @@
+message REQLogin
+{
+    required uint32 Account = 1;
+    required uint32 Password = 2;
+}
+
+message RLTLogin
+{
+    required uint32 Result = 1;
+    required uint32 Id = 2;
+}
