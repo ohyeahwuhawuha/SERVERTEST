@@ -83,6 +83,8 @@ namespace ServerP04
             _memoryStream.Position = 0;
             REQEnterLevel _req = Serializer.Deserialize<REQEnterLevel>(_memoryStream);
 
+            time = ServerTime.GetTime();
+
             RLTEnterLevel _rlt = new RLTEnterLevel();
             _rlt.uid = uid;
             foreach (var session in AppServer.GetAllSessions())
@@ -97,7 +99,7 @@ namespace ServerP04
                     actor.dir = session.dir;
                     actor.moveX = session.moveX;
                     actor.moveY = session.moveZ;
-                    
+                    actor.st = session.time;
                     _rlt.actors.Add(actor);
                 }               
             }                      
@@ -110,7 +112,7 @@ namespace ServerP04
             _bc.posY = posY;
             _bc.posZ = posZ;
             _bc.dir = dir;
-
+            _bc.st = time;
             MyAppServer _server = AppServer as MyAppServer;
             _server.BroadcastMessage<BCEnterLevel>(NetMessage.BC_EnterLevel, _bc);            
         }
