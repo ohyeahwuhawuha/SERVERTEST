@@ -1,0 +1,68 @@
+message REQMove
+{        
+    required int32 posX = 1;
+    required int32 posY = 2;
+    required int32 posZ = 3;
+    required int32 dir = 4;
+    required int32 moveX = 5;
+    required int32 moveY = 6;
+    required int32 st = 7;
+}
+
+message RLTMove
+{
+    required int32 posX = 1;
+    required int32 posY = 2;
+    required int32 posZ = 3;
+    required int32 dir = 4;
+    required int32 moveX = 5;
+    required int32 moveY = 6;
+    required int32 st = 7;
+}
+
+message BCMove
+{
+    required int32 posX = 1;
+    required int32 posY = 2;
+    required int32 posZ = 3;
+    required int32 dir = 4;
+    required int32 moveX = 5;
+    required int32 moveY = 6;
+    required int32 st = 7;
+    required int32 uid = 8;  
+}
+
+message REQEnterLevel
+{    
+    required int32 sceneId = 1;
+}
+
+message BCEnterLevel
+{
+    required int32 sceneId = 1;
+    required int32 posX = 2;
+    required int32 posY = 3;
+    required int32 posZ = 4;
+    required int32 dir = 5;
+    required int32 st = 7; 
+    required int32 uid = 8;   
+}
+
+message RLTEnterLevel
+{        
+    message Actor
+    {
+        required int32 sceneId = 1;
+        required int32 posX = 2;
+        required int32 posY = 3;
+        required int32 posZ = 4;
+        required int32 moveX = 5;
+        required int32 moveY = 6;
+        required int32 dir = 7;
+        required int32 st = 8; 
+        required int32 uid = 9;   
+    }
+
+    required int32 uid = 1;
+    repeated Actor actors = 2;
+}
