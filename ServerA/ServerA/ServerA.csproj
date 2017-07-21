@@ -90,6 +90,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script\Base\AppMain.cs" />
     <Compile Include="Script\Base\GameMgr.cs" />
+    <Compile Include="Script\Base\ServerTime.cs" />
     <Compile Include="Script\Common\Singleton.cs" />
     <Compile Include="Script\NetWork\MyAppServer.cs" />
     <Compile Include="Script\NetWork\MyAppSession.cs" />

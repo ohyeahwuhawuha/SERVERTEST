@@ -4,6 +4,7 @@ using ProtoMessage;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
+using ServerA.Script.Base;
 //using SuperSocket.SocketBase.Command;
 
 namespace ServerP04
@@ -19,7 +20,7 @@ namespace ServerP04
         public int moveX = 0;
         public int moveZ = 0;
         public int time = 0;
-
+        
         protected override void OnInit()
         {
             base.OnInit();
@@ -28,7 +29,8 @@ namespace ServerP04
         protected override void OnSessionStarted()
         {
             base.OnSessionStarted();
-            uid = AppServer.SessionCount + 1;            
+            uid = AppServer.SessionCount + 1;
+            time = ServerTime.GetTime();
         }
 
         protected override void OnSessionClosed(CloseReason reason)
@@ -95,7 +97,7 @@ namespace ServerP04
                     actor.dir = session.dir;
                     actor.moveX = session.moveX;
                     actor.moveY = session.moveZ;
-
+                    
                     _rlt.actors.Add(actor);
                 }               
             }                      
