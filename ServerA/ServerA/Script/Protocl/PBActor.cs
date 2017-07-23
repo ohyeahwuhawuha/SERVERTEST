@@ -57,9 +57,9 @@ namespace ProtoMessage
       get { return _moveY; }
       set { _moveY = value; }
     }
-    private int _st;
+    private long _st;
     [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"st", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int st
+    public long st
     {
       get { return _st; }
       set { _st = value; }
@@ -116,9 +116,9 @@ namespace ProtoMessage
       get { return _moveY; }
       set { _moveY = value; }
     }
-    private int _st;
+    private long _st;
     [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"st", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int st
+    public long st
     {
       get { return _st; }
       set { _st = value; }
@@ -175,9 +175,9 @@ namespace ProtoMessage
       get { return _moveY; }
       set { _moveY = value; }
     }
-    private int _st;
+    private long _st;
     [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"st", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int st
+    public long st
     {
       get { return _st; }
       set { _st = value; }
@@ -251,9 +251,9 @@ namespace ProtoMessage
       get { return _dir; }
       set { _dir = value; }
     }
-    private int _st;
+    private long _st;
     [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"st", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int st
+    public long st
     {
       get { return _st; }
       set { _st = value; }
@@ -289,9 +289,9 @@ namespace ProtoMessage
       get { return _actors; }
     }
   
-    private int _st;
+    private long _st;
     [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"st", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int st
+    public long st
     {
       get { return _st; }
       set { _st = value; }
@@ -350,9 +350,9 @@ namespace ProtoMessage
       get { return _dir; }
       set { _dir = value; }
     }
-    private int _st;
+    private long _st;
     [global::ProtoBuf.ProtoMember(8, IsRequired = true, Name=@"st", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int st
+    public long st
     {
       get { return _st; }
       set { _st = value; }

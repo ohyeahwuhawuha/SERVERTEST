@@ -10,10 +10,10 @@ namespace ServerA.Script.Base
     {
         static DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2017, 1, 1));
 
-        static public int GetTime()
+        static public long GetTime()
         {
             TimeSpan _timeSpan = DateTime.Now - startTime;
-            return Convert.ToInt32(_timeSpan.TotalSeconds);
+            return Convert.ToInt64(_timeSpan.TotalMilliseconds);
         }
     }
 }

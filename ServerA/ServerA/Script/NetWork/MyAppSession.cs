@@ -19,7 +19,7 @@ namespace ServerP04
         public int dir = 0;
         public int moveX = 0;
         public int moveZ = 0;
-        public int time = 0;
+        public long time = 0;
         
         protected override void OnInit()
         {
@@ -29,8 +29,7 @@ namespace ServerP04
         protected override void OnSessionStarted()
         {
             base.OnSessionStarted();
-            uid = AppServer.SessionCount + 1;
-            time = ServerTime.GetTime();
+            uid = AppServer.SessionCount + 1;            
         }
 
         protected override void OnSessionClosed(CloseReason reason)
@@ -87,6 +86,7 @@ namespace ServerP04
 
             RLTEnterLevel _rlt = new RLTEnterLevel();
             _rlt.uid = uid;
+            _rlt.st = time;
             foreach (var session in AppServer.GetAllSessions())
             {
                 if(session != this)
