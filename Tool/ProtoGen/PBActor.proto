@@ -67,3 +67,9 @@ message RLTEnterLevel
     repeated Actor actors = 2;
     required int64 st = 3;
 }
+
+message BCLogout
+{        
+    required int32 uid = 1;
+	required int32 sceneId = 2;
+}

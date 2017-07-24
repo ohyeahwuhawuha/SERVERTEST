@@ -35,6 +35,10 @@ namespace ServerP04
         protected override void OnSessionClosed(CloseReason reason)
         {
             base.OnSessionClosed(reason);
+            BCLogout _bc = new BCLogout();
+            _bc.uid = uid;
+            MyAppServer _server = AppServer as MyAppServer;
+            _server.BroadcastMessage<BCLogout>(NetMessage.BC_Logout, _bc);
         }
 
         public void OnNewRequestReceived(MyRequestInfo requestInfo)

@@ -17,6 +17,7 @@ public class NetMessage
 
     public const ushort BC_EnterLevel = 59999;  //登入请求.
     public const ushort BC_Move = 60000;  //登入结果.
+    public const ushort BC_Logout = 50000;
     //=========================================================//
 
     public const ushort NM_MAX = ushort.MaxValue; //65535;
