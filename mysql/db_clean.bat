@@ -1,0 +1,1 @@
+FOR  /f %%J IN ('mysql -uroot -N -e "use testSql;show tables";') do (mysql -uroot -e "truncate testSql.%%J")
