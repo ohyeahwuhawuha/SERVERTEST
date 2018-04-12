@@ -1,0 +1,6 @@
+E:\GitHub\SERVERTEST\ServerA\bin\Debug\GameServer\GameServer.exe.config
+E:\GitHub\SERVERTEST\ServerA\bin\Debug\GameServer\GameServer.exe
+E:\GitHub\SERVERTEST\ServerA\bin\Debug\GameServer\GameServer.pdb
+E:\GitHub\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.csprojResolveAssemblyReference.cache
+E:\GitHub\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.exe
+E:\GitHub\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.pdb

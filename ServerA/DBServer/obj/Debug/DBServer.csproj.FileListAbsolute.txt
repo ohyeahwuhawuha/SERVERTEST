@@ -1,0 +1,8 @@
+E:\GitHub\SERVERTEST\ServerA\bin\Debug\DBServer\DBServer.exe.config
+E:\GitHub\SERVERTEST\ServerA\bin\Debug\DBServer\DBServer.exe
+E:\GitHub\SERVERTEST\ServerA\bin\Debug\DBServer\DBServer.pdb
+E:\GitHub\SERVERTEST\ServerA\DBServer\obj\Debug\DBServer.csprojResolveAssemblyReference.cache
+E:\GitHub\SERVERTEST\ServerA\DBServer\obj\Debug\DBServer.Properties.Resources.resources
+E:\GitHub\SERVERTEST\ServerA\DBServer\obj\Debug\DBServer.csproj.GenerateResource.Cache
+E:\GitHub\SERVERTEST\ServerA\DBServer\obj\Debug\DBServer.exe
+E:\GitHub\SERVERTEST\ServerA\DBServer\obj\Debug\DBServer.pdb
