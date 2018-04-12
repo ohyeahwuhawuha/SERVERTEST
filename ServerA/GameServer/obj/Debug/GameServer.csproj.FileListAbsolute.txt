@@ -4,10 +4,3 @@ E:\GitHub\SERVERTEST\ServerA\bin\Debug\GameServer\GameServer.pdb
 E:\GitHub\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.csprojResolveAssemblyReference.cache
 E:\GitHub\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.exe
 E:\GitHub\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.pdb
-F:\2018.3.13起程序学习\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.csprojResolveAssemblyReference.cache
-F:\2018.3.13起程序学习\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.csproj.CoreCompileInputs.cache
-F:\2018.3.13起程序学习\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.exe
-F:\2018.3.13起程序学习\SERVERTEST\ServerA\GameServer\obj\Debug\GameServer.pdb
-F:\2018.3.13起程序学习\SERVERTEST\ServerA\bin\Debug\GameServer\GameServer.exe.config
-F:\2018.3.13起程序学习\SERVERTEST\ServerA\bin\Debug\GameServer\GameServer.exe
-F:\2018.3.13起程序学习\SERVERTEST\ServerA\bin\Debug\GameServer\GameServer.pdb
