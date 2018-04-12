@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 // Generated from: PBActor.proto
-namespace ProtoMessage
+namespace Protocl
 {
   [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"REQMove")]
   public partial class REQMove : global::ProtoBuf.IExtensible

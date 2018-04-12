@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using ProtoMessage;
+using Protocl;
 using ProtoBuf;
 
 namespace ServerP04

@@ -1,6 +1,6 @@
 ﻿using SuperSocket.SocketBase;
 using System.IO;
-using ProtoMessage;
+using Protocl;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;

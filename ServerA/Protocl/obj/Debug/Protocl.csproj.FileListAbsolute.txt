@@ -1,0 +1,6 @@
+F:\2018.3.13起程序学习\SERVERTEST\ServerA\bin\Debug\Protocl\Protocl.dll
+F:\2018.3.13起程序学习\SERVERTEST\ServerA\bin\Debug\Protocl\Protocl.pdb
+F:\2018.3.13起程序学习\SERVERTEST\ServerA\Protocl\obj\Debug\Protocl.csprojResolveAssemblyReference.cache
+F:\2018.3.13起程序学习\SERVERTEST\ServerA\Protocl\obj\Debug\Protocl.csproj.CoreCompileInputs.cache
+F:\2018.3.13起程序学习\SERVERTEST\ServerA\Protocl\obj\Debug\Protocl.dll
+F:\2018.3.13起程序学习\SERVERTEST\ServerA\Protocl\obj\Debug\Protocl.pdb

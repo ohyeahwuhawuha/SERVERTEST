@@ -55,6 +55,9 @@
     <Reference Include="protobuf-net">
       <HintPath>..\packages\protobuf-net.dll</HintPath>
     </Reference>
+    <Reference Include="Protocl">
+      <HintPath>..\bin\Debug\Protocl\Protocl.dll</HintPath>
+    </Reference>
     <Reference Include="SuperSocket.Common, Version=1.6.6.1, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
       <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Common.dll</HintPath>
       <Private>True</Private>
@@ -87,7 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\AppMain.cs" />
+    <Compile Include="AppMain.cs" />
     <Compile Include="Base\GameMgr.cs" />
     <Compile Include="Base\ServerTime.cs" />
     <Compile Include="Common\Singleton.cs" />
@@ -98,7 +101,6 @@
     <Compile Include="NetWork\NetMessage.cs" />
     <Compile Include="NetWork\NetMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protocl\PBActor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
