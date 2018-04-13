@@ -40,16 +40,16 @@
       <HintPath>..\packages\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>..\..\..\ServerA\packages\protobuf-net.dll</HintPath>
+      <HintPath>..\packages\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.Common">
-      <HintPath>..\..\..\ServerA\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Common.dll</HintPath>
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.Common.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.Facility">
-      <HintPath>..\..\..\ServerA\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Facility.dll</HintPath>
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.Facility.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.SocketBase">
-      <HintPath>..\..\..\ServerA\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.SocketBase.dll</HintPath>
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.SocketBase.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.SocketEngine">
       <HintPath>..\..\..\ServerA\packages\SuperSocket.Engine.1.6.6.1\lib\net45\SuperSocket.SocketEngine.dll</HintPath>
