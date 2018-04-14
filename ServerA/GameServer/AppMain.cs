@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ServerP04
+namespace GameServer
 {
     class AppMain
     {
@@ -9,9 +9,9 @@ namespace ServerP04
             Console.WriteLine("Press any key to start the server!");
             Console.ReadKey();
 
-            NetMgr.I.OpenServer();
+            NetManager.I.OnStart();
 
-            Console.WriteLine("The server started successfully, press key 'q' to stop it!");
+            Console.WriteLine("The server started successfully !!! \n press key 'q' to stop it!");
             
             while (Console.ReadKey().KeyChar != 'q')
             {
@@ -19,7 +19,7 @@ namespace ServerP04
                 continue;
             }
 
-            NetMgr.I.CloseServer();
+            NetManager.I.OnEnd();
            
             Console.WriteLine("Press any key to end app!");
             Console.ReadKey();

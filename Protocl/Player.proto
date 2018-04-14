@@ -1,0 +1,7 @@
+message PlayerBase
+{
+    required int32 uid = 1;
+    required int32 sex = 2;
+    required int32 career = 3;    
+    required string name = 4;
+}

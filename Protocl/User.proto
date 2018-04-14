@@ -1,0 +1,11 @@
+import "Player.proto";
+
+message C2L_Login
+{        
+    required int32 uid = 1;
+}
+
+message L2C_Login
+{        
+    required PlayerBase player_base = 1;
+}

@@ -1,7 +1,7 @@
 @echo off  
 set SOURCE_DIR=.
 set PROTOGEN_DIR=..\Tool\ProtoGen\protogen.exe
-set CS_TARGET_DIR=..\ServerA\Protocl
+set CS_TARGET_DIR=..\ServerA\Protocl\Script
 
 rem delete old cs
 del %CS_TARGET_DIR%\*.cs /f /s /q
