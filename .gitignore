@@ -1,6 +1,3 @@
-
-ServerA/ServerA/GameServer/obj
-ServerA/ServerA/Protocl/obj
-ServerA/ServerA/Common/obj
 ServerA/.vs
-ServerA/bin
+bin
+obj
