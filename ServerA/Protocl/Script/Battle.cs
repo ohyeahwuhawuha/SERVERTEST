@@ -79,9 +79,9 @@ namespace Protocl
   {
     public B2C_Command() {}
     
-    private int _dt;
+    private long _dt;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"dt", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int dt
+    public long dt
     {
       get { return _dt; }
       set { _dt = value; }

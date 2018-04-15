@@ -1,7 +1,7 @@
 ﻿using SuperSocket.SocketBase.Protocol;
 using System.IO;
 
-namespace Common
+namespace Common.Server
 {
     public class RequestInfoEntity : IRequestInfo<byte[]>
     {

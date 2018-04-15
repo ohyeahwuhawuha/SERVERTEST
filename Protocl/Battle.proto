@@ -21,7 +21,7 @@ message C2B_Command
 
 message B2C_Command
 {
-    required int32 dt = 1;
+    required int64 dt = 1;
     repeated C2B_Command commons = 2;
 }
 

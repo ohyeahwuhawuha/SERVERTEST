@@ -4,7 +4,7 @@ using SuperSocket.SocketBase.Protocol;
 using SuperSocket.Facility.Protocol;
 using SuperSocket.Common;
 
-namespace Common
+namespace Common.Server
 {
     public class ReceiveFilterEntity : FixedHeaderReceiveFilter<RequestInfoEntity>
     {

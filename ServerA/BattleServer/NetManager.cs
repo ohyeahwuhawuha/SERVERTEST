@@ -5,16 +5,14 @@ using Protocl;
 using Common;
 using Common.Server;
 
-namespace GameServer
+namespace BattleServer
 {
     public class NetManager : Singleton<NetManager>
     {
         private AppServerEntity _server = new AppServerEntity();
-        private MySqlConnect _MySqlConnect = new MySqlConnect();       
 
         public void OnStart()
         {
-            _MySqlConnect.Initialize();
             OpenServer();
         }
 
@@ -42,6 +40,8 @@ namespace GameServer
 
         private void OpenServer()
         {
+            _server.NewSessionConnected += OnSessionConnected;
+
             if (!_server.Setup(2012))
             {
                 Console.WriteLine("Failed to setup!");
@@ -59,6 +59,11 @@ namespace GameServer
         {
             _server.Stop();
             Console.WriteLine("The server was stopped!");
-        }        
+        }
+
+        private void OnSessionConnected(AppSessionEntity session)
+        {
+            
+        }
     }
 }

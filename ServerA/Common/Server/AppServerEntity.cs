@@ -6,7 +6,7 @@ using Protocl;
 using System.IO;
 using System;
 
-namespace Common
+namespace Common.Server
 {
     public class AppServerEntity : AppServer<AppSessionEntity, RequestInfoEntity>
     {
@@ -42,6 +42,13 @@ namespace Common
             _sendStream.Write(bufferBody, 0, bufferBody.Length);
 
             return _sendStream.ToArray();
+        }
+
+        public void RegisterMessage(EMessage message, Action<AppSessionEntity, EMessage, Stream> handler)
+        {
+            if (handler == null)
+                return;
+            actions[(ushort)message] = handler;
         }
 
         public void SendMessage<T>(AppSessionEntity session, ushort msgType, T body) where T : IExtensible

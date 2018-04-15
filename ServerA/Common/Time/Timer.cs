@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common
+namespace Common.Time
 {
     public static class Timer
     {
@@ -10,6 +10,6 @@ namespace Common
         {
             TimeSpan _timeSpan = DateTime.Now - startTime;
             return Convert.ToInt64(_timeSpan.TotalMilliseconds);
-        }
+        }        
     }
 }

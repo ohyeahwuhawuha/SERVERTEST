@@ -67,8 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\MySqlConnect.cs" />
-    <Compile Include="Timer.cs" />
+    <Compile Include="Server\MySqlConnect.cs" />
+    <Compile Include="Time\Timer.cs" />
     <Compile Include="Server\AppServerEntity.cs" />
     <Compile Include="Server\AppSessionEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

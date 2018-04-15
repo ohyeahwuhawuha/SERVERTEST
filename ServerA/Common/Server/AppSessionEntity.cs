@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 //using SuperSocket.SocketBase.Command;
 
-namespace Common
+namespace Common.Server
 {
     public class AppSessionEntity : AppSession<AppSessionEntity, RequestInfoEntity>
     {

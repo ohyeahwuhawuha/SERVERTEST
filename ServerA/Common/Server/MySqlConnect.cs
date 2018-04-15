@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 
 //base from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 
-namespace Common.Database
+namespace Common.Server
 {
     public class MySqlConnect
     {
