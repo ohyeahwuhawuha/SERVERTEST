@@ -6,11 +6,17 @@ enum EMessage
     L2C_LOGIN = 1026;
 
     GAME_SERVER = 10000;    //游戏服务器消息
-    C2S_MATCHES = 10001;    //匹配
-    S2C_MATCHES = 10002;
-    C2S_READY = 10003;      //准备
-    S2C_READY = 10004;
-    S2C_ALLREADY = 10006;   //全部准备好了
+    C2S_MATCH = 10001;    //匹配
+    S2C_MATCH = 10002;
+    C2S_MATCH_CANCEL = 10003;    //取消匹配
+    S2C_MATCH_CANCEL = 10004;
+
+    S2C_MATCH_SUCCESS = 10005;
+
+    C2S_READY = 10007;      //准备
+    S2C_READY = 10008;
+    
+    S2C_ALLREADY = 10009;   //全部准备好了
     
     BATTLE_SERVER = 20000;  //战斗服务器消息
     C2B_COMMAND = 20001;    //指令

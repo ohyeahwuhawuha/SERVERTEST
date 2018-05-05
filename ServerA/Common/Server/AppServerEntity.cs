@@ -8,14 +8,14 @@ using System;
 
 namespace Common.Server
 {
-    public class AppServerEntity : AppServer<AppSessionEntity, RequestInfoEntity>
+    public class AppServerEntity <TAppSession> : AppServer<TAppSession, RequestInfoEntity> where TAppSession : AppSession<TAppSession, RequestInfoEntity>, IAppSession, new()
     {
         private MemoryStream _sendStream = new MemoryStream();
         private MemoryStream _receiveStream = new MemoryStream();
-        private Action<AppSessionEntity, EMessage, Stream> action = null;
+        private Action<TAppSession, EMessage, Stream> _action = null;
 
-        private List<AppSessionEntity> _sessions = new List<AppSessionEntity>();
-        private Dictionary<ushort, Action<AppSessionEntity, EMessage, Stream>> actions = new Dictionary<ushort, Action<AppSessionEntity, EMessage, Stream>>();
+        private List<TAppSession> _sessions = new List<TAppSession>();
+        private Dictionary<ushort, Action<TAppSession, EMessage, Stream>> actions = new Dictionary<ushort, Action<TAppSession, EMessage, Stream>>();
 
         public AppServerEntity()
             : base(new DefaultReceiveFilterFactory<ReceiveFilterEntity, RequestInfoEntity>())
@@ -44,14 +44,14 @@ namespace Common.Server
             return _sendStream.ToArray();
         }
 
-        public void RegisterMessage(EMessage message, Action<AppSessionEntity, EMessage, Stream> handler)
+        public void RegisterMessage(EMessage message, Action<TAppSession, EMessage, Stream> handler)
         {
             if (handler == null)
                 return;
             actions[(ushort)message] = handler;
         }
 
-        public void SendMessage<T>(AppSessionEntity session, ushort msgType, T body) where T : IExtensible
+        public void SendMessage<T>(TAppSession session, ushort msgType, T body) where T : IExtensible
         {
             if (session == null)
                 return;
@@ -68,26 +68,26 @@ namespace Common.Server
             }
         }
 
-        protected override void ExecuteCommand(AppSessionEntity session, RequestInfoEntity requestInfo)
+        protected override void ExecuteCommand(TAppSession session, RequestInfoEntity requestInfo)
         {
-            if (actions.TryGetValue(requestInfo.MessageType, out action))
+            if (actions.TryGetValue(requestInfo.MessageType, out _action))
             {
                 _receiveStream.SetLength(0L);
                 _receiveStream.Position = 0;
                 _receiveStream.Write(requestInfo.Body, 0, requestInfo.Body.Length);
                 _receiveStream.Position = 0;
-                action.Invoke(session, (EMessage)requestInfo.MessageType, _receiveStream);
+                _action.Invoke(session, (EMessage)requestInfo.MessageType, _receiveStream);
             }
         }
 
-        protected override void OnNewSessionConnected(AppSessionEntity session)
+        protected override void OnNewSessionConnected(TAppSession session)
         {
             base.OnNewSessionConnected(session);
 
             Console.WriteLine("OnNewSessionConnected session id = {0}", session.SessionID);
         }
 
-        protected override void OnSessionClosed(AppSessionEntity session, CloseReason reason)
+        protected override void OnSessionClosed(TAppSession session, CloseReason reason)
         {
             base.OnSessionClosed(session, reason);
 

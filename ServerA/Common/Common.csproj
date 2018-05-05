@@ -45,17 +45,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\Protocl.dll</HintPath>
     </Reference>
-    <Reference Include="SuperSocket.Common, Version=1.6.6.1, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.Common.dll</HintPath>
+    <Reference Include="SuperSocket.Common">
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SuperSocket.Facility, Version=1.6.6.1, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.Facility.dll</HintPath>
+    <Reference Include="SuperSocket.Facility">
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Facility.dll</HintPath>
     </Reference>
-    <Reference Include="SuperSocket.SocketBase, Version=1.6.6.1, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.SocketBase.dll</HintPath>
+    <Reference Include="SuperSocket.SocketBase">
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.SocketBase.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.SocketEngine">
+      <HintPath>..\packages\SuperSocket.Engine.1.6.6.1\lib\net45\SuperSocket.SocketEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,7 +70,6 @@
     <Compile Include="Server\MySqlConnect.cs" />
     <Compile Include="Time\Timer.cs" />
     <Compile Include="Server\AppServerEntity.cs" />
-    <Compile Include="Server\AppSessionEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\ReceiveFilterEntity.cs" />
     <Compile Include="Server\RequestInfoEntity.cs" />

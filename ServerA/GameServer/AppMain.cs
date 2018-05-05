@@ -1,4 +1,5 @@
 ﻿using System;
+using log4net;
 
 namespace GameServer
 {
@@ -24,5 +25,8 @@ namespace GameServer
             Console.WriteLine("Press any key to end app!");
             Console.ReadKey();
         }
+
+
+
     }
 }

@@ -9,7 +9,7 @@ namespace BattleServer
 {
     public class NetManager : Singleton<NetManager>
     {
-        private AppServerEntity _server = new AppServerEntity();
+        private AppServerEntity<AppSessionEntity> _server = new AppServerEntity<AppSessionEntity>();
 
         public void OnStart()
         {

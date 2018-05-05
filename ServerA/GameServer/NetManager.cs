@@ -9,7 +9,7 @@ namespace GameServer
 {
     public class NetManager : Singleton<NetManager>
     {
-        private AppServerEntity _server = new AppServerEntity();
+        private AppServerEntity<GameSession> _server = new AppServerEntity<GameSession>();
         private MySqlConnect _MySqlConnect = new MySqlConnect();       
 
         public void OnStart()
@@ -23,12 +23,12 @@ namespace GameServer
             CloseServer();
         }
 
-        public void RegisterMessage(EMessage message, Action<AppSessionEntity, EMessage, Stream> handler)
+        public void RegisterMessage(EMessage message, Action<GameSession, EMessage, Stream> handler)
         {
             _server.RegisterMessage(message, handler);
         }
 
-        public void SendMessage<T>(AppSessionEntity session, EMessage msgType, T body) where T : IExtensible
+        public void SendMessage<T>(GameSession session, EMessage msgType, T body) where T : IExtensible
         {
             if (_server != null)
                 _server.SendMessage<T>(session, (ushort)msgType, body);

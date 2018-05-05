@@ -46,14 +46,16 @@
       <HintPath>..\..\Debug\Protocl.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.Common">
-      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.Common.dll</HintPath>
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SuperSocket.Facility, Version=1.6.6.1, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.Facility.dll</HintPath>
+    <Reference Include="SuperSocket.Facility">
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Facility.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.SocketBase">
-      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net35\SuperSocket.SocketBase.dll</HintPath>
+      <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.SocketBase.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.SocketEngine">
+      <HintPath>..\packages\SuperSocket.Engine.1.6.6.1\lib\net45\SuperSocket.SocketEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSessionEntity.cs" />
     <Compile Include="BattleServer.cs" />
     <Compile Include="LogicHandler.cs" />
     <Compile Include="NetManager.cs" />
