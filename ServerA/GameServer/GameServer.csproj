@@ -88,7 +88,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppMain.cs" />
+    <Compile Include="Battle\BattleRoom.cs" />
+    <Compile Include="Battle\BattleRoomManager.cs" />
     <Compile Include="GameSession.cs" />
+    <Compile Include="Handler\BattleHandler.cs" />
     <Compile Include="Handler\MatchHandler.cs" />
     <Compile Include="NetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

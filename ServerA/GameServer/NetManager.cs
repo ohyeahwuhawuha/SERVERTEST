@@ -10,7 +10,7 @@ namespace GameServer
     public class NetManager : Singleton<NetManager>
     {
         private AppServerEntity<GameSession> _server = new AppServerEntity<GameSession>();
-        private MySqlConnect _MySqlConnect = new MySqlConnect();       
+        private MySqlConnect _MySqlConnect = new MySqlConnect();
 
         public void OnStart()
         {
@@ -40,7 +40,7 @@ namespace GameServer
                 _server.SendMessage<T>(session, (ushort)msgType, body, flag);
         }
 
-        public void BroadcastMessage<T>(EMessage msgType, ushort flag = 0)
+        public void BroadcastMessage(EMessage msgType, ushort flag = 0)
         {
             if (_server != null)
                 _server.BroadcastMessage((ushort)msgType, flag);

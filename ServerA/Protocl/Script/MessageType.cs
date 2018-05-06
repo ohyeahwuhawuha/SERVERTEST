@@ -38,9 +38,6 @@ namespace Protocl
       [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_CANCEL", Value=10004)]
       S2C_MATCH_CANCEL = 10004,
             
-      [global::ProtoBuf.ProtoEnum(Name=@"C2S_MATCH_SUCCESS", Value=10005)]
-      C2S_MATCH_SUCCESS = 10005,
-            
       [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_SUCCESS", Value=10006)]
       S2C_MATCH_SUCCESS = 10006,
             
@@ -49,9 +46,6 @@ namespace Protocl
             
       [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_READY", Value=10008)]
       S2C_MATCH_READY = 10008,
-            
-      [global::ProtoBuf.ProtoEnum(Name=@"C2S_MATCH_ALL_READY", Value=10009)]
-      C2S_MATCH_ALL_READY = 10009,
             
       [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_ALL_READY", Value=10010)]
       S2C_MATCH_ALL_READY = 10010,
@@ -70,6 +64,9 @@ namespace Protocl
             
       [global::ProtoBuf.ProtoEnum(Name=@"B2C_LOAD_PROGRESS", Value=20004)]
       B2C_LOAD_PROGRESS = 20004,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"B2C_ALL_LOADED", Value=20006)]
+      B2C_ALL_LOADED = 20006,
             
       [global::ProtoBuf.ProtoEnum(Name=@"MAX", Value=65535)]
       MAX = 65535

@@ -1,5 +1,6 @@
 ﻿using System;
 using log4net;
+using Common.Time;
 
 namespace GameServer
 {
@@ -13,11 +14,20 @@ namespace GameServer
             NetManager.I.OnStart();
 
             Console.WriteLine("The server started successfully !!! \n press key 'q' to stop it!");
-            
+
+            Timer.SetStartTime();
+            long preTime = Timer.GetTime();
+            long deltaTime = 0L;
+
             while (Console.ReadKey().KeyChar != 'q')
             {
-                Console.WriteLine();
-                continue;
+                deltaTime += (Timer.GetTime() - preTime);
+                preTime = Timer.GetTime();
+                if (deltaTime >= 20)
+                {
+                    Battle.BattleRoomManager.I.Update(deltaTime);
+                    deltaTime = 0L;
+                }
             }
 
             NetManager.I.OnEnd();
@@ -25,8 +35,5 @@ namespace GameServer
             Console.WriteLine("Press any key to end app!");
             Console.ReadKey();
         }
-
-
-
     }
 }

@@ -13,6 +13,7 @@ namespace GameServer
     {
         public int uid = 0;
         public bool isMatching = false;
+        public int BattleRoomID = 0;
 
         public PlayerBase playerBase = new PlayerBase();
     }

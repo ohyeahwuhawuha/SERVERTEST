@@ -69,8 +69,6 @@
   <ItemGroup>
     <Compile Include="AppSessionEntity.cs" />
     <Compile Include="BattleServer.cs" />
-    <Compile Include="LogicHandler.cs" />
-    <Compile Include="NetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

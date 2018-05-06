@@ -53,8 +53,15 @@ namespace Protocl
       get { return _uid; }
       set { _uid = value; }
     }
+    private ECommand _command;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"command", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public ECommand command
+    {
+      get { return _command; }
+      set { _command = value; }
+    }
     private int _skill_id = default(int);
-    [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"skill_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"skill_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
     public int skill_id
     {
@@ -62,7 +69,7 @@ namespace Protocl
       set { _skill_id = value; }
     }
     private VECTOR3 _dir = null;
-    [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"dir", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"dir", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
     public VECTOR3 dir
     {
@@ -86,11 +93,11 @@ namespace Protocl
       get { return _dt; }
       set { _dt = value; }
     }
-    private readonly global::System.Collections.Generic.List<C2B_Command> _commons = new global::System.Collections.Generic.List<C2B_Command>();
-    [global::ProtoBuf.ProtoMember(2, Name=@"commons", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public global::System.Collections.Generic.List<C2B_Command> commons
+    private readonly global::System.Collections.Generic.List<C2B_Command> _commands = new global::System.Collections.Generic.List<C2B_Command>();
+    [global::ProtoBuf.ProtoMember(2, Name=@"commands", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public global::System.Collections.Generic.List<C2B_Command> commands
     {
-      get { return _commons; }
+      get { return _commands; }
     }
   
     private global::ProtoBuf.IExtension extensionObject;
@@ -139,8 +146,8 @@ namespace Protocl
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-    [global::ProtoBuf.ProtoContract(Name=@"ECommon")]
-    public enum ECommon
+    [global::ProtoBuf.ProtoContract(Name=@"ECommand")]
+    public enum ECommand
     {
             
       [global::ProtoBuf.ProtoEnum(Name=@"StartMove", Value=1)]

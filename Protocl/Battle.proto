@@ -1,4 +1,4 @@
-enum ECommon
+enum ECommand
 {        
     StartMove = 1;
     StopMove = 2;
@@ -15,14 +15,15 @@ message VECTOR3
 message C2B_Command
 {        
     required int32 uid = 1;
-    optional int32 skill_id = 2;
-    optional VECTOR3 dir = 3;
+    required ECommand command = 2;
+    optional int32 skill_id = 3;
+    optional VECTOR3 dir = 4;
 }
 
 message B2C_Command
 {
     required int64 dt = 1;
-    repeated C2B_Command commons = 2;
+    repeated C2B_Command commands = 2;
 }
 
 message C2B_LoadProgress

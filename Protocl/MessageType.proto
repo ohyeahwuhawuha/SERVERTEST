@@ -10,18 +10,21 @@ enum EMessage
     S2C_MATCH = 10002;
     C2S_MATCH_CANCEL = 10003;       //取消匹配
     S2C_MATCH_CANCEL = 10004;
-    C2S_MATCH_SUCCESS = 10005;      //匹配成功
-    S2C_MATCH_SUCCESS = 10006;
+      
+    S2C_MATCH_SUCCESS = 10006;      //匹配成功
     C2S_MATCH_READY = 10007;        //准备
     S2C_MATCH_READY = 10008;
-    C2S_MATCH_ALL_READY = 10009;    //全部准备
-    S2C_MATCH_ALL_READY = 10010;
+    
+    S2C_MATCH_ALL_READY = 10010;    //全部准备
+    
     
     BATTLE_SERVER = 20000;  //战斗服务器消息
     C2B_COMMAND = 20001;    //指令
     B2C_COMMAND = 20002;
     C2B_LOAD_PROGRESS = 20003;  //加载进度  
     B2C_LOAD_PROGRESS = 20004;    
+
+    B2C_ALL_LOADED = 20006;    //全部加载完
 
     MAX = 65535;
 }

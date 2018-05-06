@@ -1,52 +1,66 @@
-﻿using Common.Server;
+﻿using Common;
 using Protocl;
 using System.IO;
 using System.Collections.Generic;
 
 namespace GameServer.Handler
 {
-    public class MatchHandler
+    public class MatchHandler : Singleton<MatchHandler>
     {
-        private List<GameSession> _matching = new List<GameSession>();
-        private int _matchCount = 2;
+        private List<GameSession> _waitList = new List<GameSession>();
+        private int _waitCount = 2;
 
-        private void OnMatch(GameSession session, EMessage msg, Stream buff)
-        {        
+        public void Register()
+        {
+            NetManager.I.RegisterMessage(EMessage.C2S_MATCH, OnC2S_MATCH);
+            NetManager.I.RegisterMessage(EMessage.C2S_MATCH_CANCEL, OnC2S_MATCH_CANCEL);
+        }
+
+        #region handler
+        private void OnC2S_MATCH(GameSession session, EMessage msg, Stream buff)
+        {
             if (!session.isMatching)
             {
-                _matching.Add(session);   
+                _waitList.Add(session);
             }
 
             NetManager.I.SendMessage(session, EMessage.C2S_MATCH, (ushort)0);
 
-            if (_matching.Count > 2)
+            if (_waitList.Count > 2)
             {
                 S2C_MatchSuccess rlt = new S2C_MatchSuccess();
+                BattleRoom room = Battle.BattleRoomManager.I.CreateRoom();
 
-                for(int i =0; i < _matchCount; ++i)
+                for (int i = 0; i < _waitCount; ++i)
                 {
                     rlt.players.Add(session.playerBase);
+                    room.AddPlayer(session);
                 }
 
-                for (int i = 0; i < _matchCount; ++i)
+                for (int i = 0; i < _waitCount; ++i)
                 {
                     NetManager.I.SendMessage<S2C_MatchSuccess>(session, EMessage.C2S_MATCH, rlt, 0);
                 }
 
-                _matching.RemoveRange(0, _matchCount);
+                _waitList.RemoveRange(0, _waitCount);
             }
         }
 
-        private void OnMatchCancel(GameSession session, EMessage msg, Stream buff)
+        private void OnC2S_MATCH_CANCEL(GameSession session, EMessage msg, Stream buff)
         {
-            if(session.isMatching)
+            if (session.isMatching)
             {
-                _matching.Remove(session);
+                _waitList.Remove(session);
             }
 
             NetManager.I.SendMessage(session, EMessage.C2S_MATCH, (ushort)0);
         }
 
+        #endregion
 
+        #region function
+
+
+        #endregion
     }
 }
