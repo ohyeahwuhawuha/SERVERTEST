@@ -2,23 +2,7 @@ import "Player.proto";
 
 message C2S_Match
 {        
-    required int32 uid = 1;
-    optional string name = 2;
-}
-
-message S2C_Match
-{        
-    required int32 rlt = 1;
-}
-
-message C2S_MatchCancel
-{        
-    required int32 uid = 1;
-}
-
-message S2C_MatchCancel
-{        
-    required int32 rlt = 1;
+    optional string name = 1;
 }
 
 message S2C_MatchSuccess

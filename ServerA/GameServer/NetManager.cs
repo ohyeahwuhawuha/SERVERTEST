@@ -28,16 +28,28 @@ namespace GameServer
             _server.RegisterMessage(message, handler);
         }
 
-        public void SendMessage<T>(GameSession session, EMessage msgType, T body) where T : IExtensible
+        public void SendMessage(GameSession session, EMessage msgType, ushort flag = 0)
         {
             if (_server != null)
-                _server.SendMessage<T>(session, (ushort)msgType, body);
+                _server.SendMessage(session, (ushort)msgType, flag);
         }
 
-        public void BroadcastMessage<T>(EMessage msgType, T body) where T : IExtensible
+        public void SendMessage<T>(GameSession session, EMessage msgType, T body, ushort flag = 0) where T : IExtensible
         {
             if (_server != null)
-                _server.BroadcastMessage<T>((ushort)msgType, body);
+                _server.SendMessage<T>(session, (ushort)msgType, body, flag);
+        }
+
+        public void BroadcastMessage<T>(EMessage msgType, ushort flag = 0)
+        {
+            if (_server != null)
+                _server.BroadcastMessage((ushort)msgType, flag);
+        }
+
+        public void BroadcastMessage<T>(EMessage msgType, T body, ushort flag = 0) where T : IExtensible
+        {
+            if (_server != null)
+                _server.BroadcastMessage<T>((ushort)msgType, body, flag);
         }
 
         private void OpenServer()

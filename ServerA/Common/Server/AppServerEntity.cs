@@ -23,7 +23,26 @@ namespace Common.Server
 
         }
 
-        private byte[] GenerateMessage<T>(ushort msgType, T body) where T : IExtensible
+        private byte[] GenerateMessage(ushort msgType, ushort flag)
+        {
+            _sendStream.SetLength(0L);
+            _sendStream.Position = 0;
+
+            //ushort _headSize = 4;
+            ushort _size = 0;
+            byte[] _sizeBuffer = BitConverter.GetBytes(_size);
+            byte[] _typeBuffer = BitConverter.GetBytes(msgType);
+            byte[] _flagBuffer = BitConverter.GetBytes(flag);
+
+            _sendStream.Position = 0;
+            _sendStream.Write(_typeBuffer, 0, 2);
+            _sendStream.Write(_flagBuffer, 0, 2);
+            _sendStream.Write(_sizeBuffer, 0, 2);
+
+            return _sendStream.ToArray();
+        }
+
+        private byte[] GenerateMessage<T>(ushort msgType, T body, ushort flag) where T : IExtensible
         {
             _sendStream.SetLength(0L);
             _sendStream.Position = 0;
@@ -34,10 +53,12 @@ namespace Common.Server
 
             byte[] _sizeBuffer = BitConverter.GetBytes(_size);
             byte[] _typeBuffer = BitConverter.GetBytes(msgType);
+            byte[] _flagBuffer = BitConverter.GetBytes(flag);
             byte[] bufferBody = _sendStream.ToArray();
 
             _sendStream.Position = 0;
             _sendStream.Write(_typeBuffer, 0, 2);
+            _sendStream.Write(_flagBuffer, 0, 2);
             _sendStream.Write(_sizeBuffer, 0, 2);
             _sendStream.Write(bufferBody, 0, bufferBody.Length);
 
@@ -51,17 +72,34 @@ namespace Common.Server
             actions[(ushort)message] = handler;
         }
 
-        public void SendMessage<T>(TAppSession session, ushort msgType, T body) where T : IExtensible
+        public void SendMessage(TAppSession session, ushort msgType, ushort flag)
         {
             if (session == null)
                 return;
-            byte[] _buffer = GenerateMessage<T>(msgType, body);
+            byte[] _buffer = GenerateMessage(msgType, flag);
             session.Send(_buffer, 0, _buffer.Length);
         }
 
-        public void BroadcastMessage<T>(ushort msgType, T body) where T : IExtensible
+        public void SendMessage<T>(TAppSession session, ushort msgType, T body, ushort flag) where T : IExtensible
         {
-            byte[] _buffer = GenerateMessage<T>(msgType, body);
+            if (session == null)
+                return;
+            byte[] _buffer = GenerateMessage<T>(msgType, body, flag);
+            session.Send(_buffer, 0, _buffer.Length);
+        }
+
+        public void BroadcastMessage(ushort msgType, ushort flag)
+        {
+            byte[] _buffer = GenerateMessage(msgType, flag);
+            foreach (var session in GetAllSessions())
+            {
+                session.Send(_buffer, 0, _buffer.Length);
+            }
+        }
+
+        public void BroadcastMessage<T>(ushort msgType, T body, ushort flag) where T : IExtensible
+        {
+            byte[] _buffer = GenerateMessage<T>(msgType, body, flag);
             foreach (var session in GetAllSessions())
             {
                 session.Send(_buffer, 0, _buffer.Length);

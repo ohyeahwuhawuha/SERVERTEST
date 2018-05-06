@@ -38,17 +38,23 @@ namespace Protocl
       [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_CANCEL", Value=10004)]
       S2C_MATCH_CANCEL = 10004,
             
-      [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_SUCCESS", Value=10005)]
-      S2C_MATCH_SUCCESS = 10005,
+      [global::ProtoBuf.ProtoEnum(Name=@"C2S_MATCH_SUCCESS", Value=10005)]
+      C2S_MATCH_SUCCESS = 10005,
             
-      [global::ProtoBuf.ProtoEnum(Name=@"C2S_READY", Value=10007)]
-      C2S_READY = 10007,
+      [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_SUCCESS", Value=10006)]
+      S2C_MATCH_SUCCESS = 10006,
             
-      [global::ProtoBuf.ProtoEnum(Name=@"S2C_READY", Value=10008)]
-      S2C_READY = 10008,
+      [global::ProtoBuf.ProtoEnum(Name=@"C2S_MATCH_READY", Value=10007)]
+      C2S_MATCH_READY = 10007,
             
-      [global::ProtoBuf.ProtoEnum(Name=@"S2C_ALLREADY", Value=10009)]
-      S2C_ALLREADY = 10009,
+      [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_READY", Value=10008)]
+      S2C_MATCH_READY = 10008,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"C2S_MATCH_ALL_READY", Value=10009)]
+      C2S_MATCH_ALL_READY = 10009,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"S2C_MATCH_ALL_READY", Value=10010)]
+      S2C_MATCH_ALL_READY = 10010,
             
       [global::ProtoBuf.ProtoEnum(Name=@"BATTLE_SERVER", Value=20000)]
       BATTLE_SERVER = 20000,

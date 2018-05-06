@@ -16,22 +16,21 @@ namespace GameServer.Handler
             {
                 _matching.Add(session);   
             }
-            S2C_Match rlt = new S2C_Match();
-            rlt.rlt = 0;
-            NetManager.I.SendMessage<S2C_Match>(session, EMessage.C2S_MATCH, rlt);
+
+            NetManager.I.SendMessage(session, EMessage.C2S_MATCH, (ushort)0);
 
             if (_matching.Count > 2)
             {
-                S2C_MatchSuccess rlt2 = new S2C_MatchSuccess();
+                S2C_MatchSuccess rlt = new S2C_MatchSuccess();
 
                 for(int i =0; i < _matchCount; ++i)
                 {
-                    rlt2.players.Add(session.playerBase);
+                    rlt.players.Add(session.playerBase);
                 }
 
                 for (int i = 0; i < _matchCount; ++i)
                 {
-                    NetManager.I.SendMessage<S2C_MatchSuccess>(session, EMessage.C2S_MATCH, rlt2);
+                    NetManager.I.SendMessage<S2C_MatchSuccess>(session, EMessage.C2S_MATCH, rlt, 0);
                 }
 
                 _matching.RemoveRange(0, _matchCount);
@@ -44,9 +43,8 @@ namespace GameServer.Handler
             {
                 _matching.Remove(session);
             }
-            S2C_MatchCancel rlt = new S2C_MatchCancel();
-            rlt.rlt = 0;
-            NetManager.I.SendMessage<S2C_MatchCancel>(session, EMessage.C2S_MATCH, rlt);
+
+            NetManager.I.SendMessage(session, EMessage.C2S_MATCH, (ushort)0);
         }
 
 

@@ -16,71 +16,13 @@ namespace Protocl
   {
     public C2S_Match() {}
     
-    private int _uid;
-    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"uid", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int uid
-    {
-      get { return _uid; }
-      set { _uid = value; }
-    }
     private string _name = "";
-    [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
     public string name
     {
       get { return _name; }
       set { _name = value; }
-    }
-    private global::ProtoBuf.IExtension extensionObject;
-    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
-  }
-  
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"S2C_Match")]
-  public partial class S2C_Match : global::ProtoBuf.IExtensible
-  {
-    public S2C_Match() {}
-    
-    private int _rlt;
-    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"rlt", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int rlt
-    {
-      get { return _rlt; }
-      set { _rlt = value; }
-    }
-    private global::ProtoBuf.IExtension extensionObject;
-    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
-  }
-  
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"C2S_MatchCancel")]
-  public partial class C2S_MatchCancel : global::ProtoBuf.IExtensible
-  {
-    public C2S_MatchCancel() {}
-    
-    private int _uid;
-    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"uid", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int uid
-    {
-      get { return _uid; }
-      set { _uid = value; }
-    }
-    private global::ProtoBuf.IExtension extensionObject;
-    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
-  }
-  
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"S2C_MatchCancel")]
-  public partial class S2C_MatchCancel : global::ProtoBuf.IExtensible
-  {
-    public S2C_MatchCancel() {}
-    
-    private int _rlt;
-    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"rlt", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int rlt
-    {
-      get { return _rlt; }
-      set { _rlt = value; }
     }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
